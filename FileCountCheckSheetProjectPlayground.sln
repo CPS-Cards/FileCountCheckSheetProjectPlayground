@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileCountCheckSheetProjectPlayground", "FileCountCheckSheetProjectPlayground.csproj", "{3F580E66-87A4-4DD6-A347-3CD951F4E046}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F580E66-87A4-4DD6-A347-3CD951F4E046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F580E66-87A4-4DD6-A347-3CD951F4E046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F580E66-87A4-4DD6-A347-3CD951F4E046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F580E66-87A4-4DD6-A347-3CD951F4E046}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04D591C7-6B37-45F1-8897-80100C7E568F}
+	EndGlobalSection
+EndGlobal
