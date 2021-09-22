@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace FileCountCheckSheetProjectPlayground
@@ -6,6 +7,12 @@ namespace FileCountCheckSheetProjectPlayground
     class Program
     {
         public const string SLAFile = @"S:\Planner\Daily Reporting\Daily reporting data.tab";
+
+        protected static readonly Dictionary<string, string> DayDictionary = new Dictionary<string, string>()
+        {
+            { "Monday", "Blue" }, { "Tuesday", "Green" }, { "Wednesday", "Black" }, { "Thursday", "Red" }, { "Friday", "Yellow" }, {"Default",string.Empty}
+        };
+
         static void Main(string[] args)
         {
             DayTest();
@@ -13,12 +20,13 @@ namespace FileCountCheckSheetProjectPlayground
 
         public static void DayTest()
         {
-            Console.WriteLine("Input a Job Number:\n");
+            Console.WriteLine("Input a Job Number:");
             int jobNumber = Int32.Parse(Console.ReadLine());
             var sla = GetJobSLANumber(jobNumber);
             var day = GetDay(sla);
+            var color = GetColor(day);
 
-            Console.WriteLine(day);
+            Console.WriteLine($"{day} - {color}");
             Console.ReadLine();
         }
 
@@ -37,8 +45,7 @@ namespace FileCountCheckSheetProjectPlayground
         }
         public static string GetDay(int offset)
         {
-            if (offset < 0)
-                return "Default";
+            if (offset < 0) return "Default";
             var today = DateTime.Now;
             today = today.AddDays(offset);
             var result = today.DayOfWeek.ToString();
@@ -46,5 +53,19 @@ namespace FileCountCheckSheetProjectPlayground
                 result = "Monday";
             return result;
         }
+
+        public static string GetColor(string day)
+        {
+            return DayDictionary[day];
+        }
+
+        public void STEPH_CODE()
+        {
+            /*
+             
+             */
+        }
+
+        
     }
 }
