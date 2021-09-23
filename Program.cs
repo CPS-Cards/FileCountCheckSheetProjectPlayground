@@ -10,7 +10,7 @@ namespace FileCountCheckSheetProjectPlayground
 
         protected static readonly Dictionary<string, string> DayDictionary = new Dictionary<string, string>()
         {
-            { "Monday", "Blue" }, { "Tuesday", "Green" }, { "Wednesday", "Black" }, { "Thursday", "Red" }, { "Friday", "Yellow" }, { "Default", string.Empty }
+            { "Monday", "BLUE" }, { "Tuesday", "GREEN" }, { "Wednesday", "BLACK" }, { "Thursday", "RED" }, { "Friday", "YELLOW" }, { "Default", string.Empty }
         };
 
         public static Dictionary<string, int> jobDayOffset;
@@ -27,12 +27,17 @@ namespace FileCountCheckSheetProjectPlayground
         {
             Console.WriteLine("Input a Job Number:");
             int jobNumber = Int32.Parse(Console.ReadLine());
+            // we have to make sure this is an int otherwise the code will throw an exception
+            // Steve uses the code alReports[1].ToString().Substring(2) to append the job number onto the 'J' (line 1864) , if we call this and dont call to substring what do we get? it is marked as "Job Number" in the structure (line 1765)
             var sla = GetJobSLANumber(jobNumber);
             var day = GetDay(sla);
             var color = GetColor(day);
 
             Console.WriteLine($"{day} - {color}");
-            Console.ReadLine();
+            Console.WriteLine("Continue Testing?");
+            var testMore = Console.ReadLine();
+            if (testMore == "y" || testMore == "yes" || testMore == "Y")
+                DayTest();
         }
 
         public static int GetJobSLANumber(int number)
