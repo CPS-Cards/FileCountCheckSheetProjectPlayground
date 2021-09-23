@@ -10,7 +10,7 @@ namespace FileCountCheckSheetProjectPlayground
 
         protected static readonly Dictionary<string, string> DayDictionary = new Dictionary<string, string>()
         {
-            { "Monday", "Blue" }, { "Tuesday", "Green" }, { "Wednesday", "Black" }, { "Thursday", "Red" }, { "Friday", "Yellow" }, {"Default",string.Empty}
+            { "Monday", "Blue" }, { "Tuesday", "Green" }, { "Wednesday", "Black" }, { "Thursday", "Red" }, { "Friday", "Yellow" }, { "Default", string.Empty }
         };
 
         static void Main(string[] args)
