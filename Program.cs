@@ -17,10 +17,10 @@ namespace FileCountCheckSheetProjectPlayground
 
         static void Main(string[] args)
         {
-            GetJobOffset();
-            //DayTest();
+            DayTest();
+            /*GetJobOffset();
             if (DateTime.Now.Hour % 4 == 0 && DateTime.Now.Minute % 30 == 0) GetJobOffset();    //I don't know how else to simulate a hard reset of our dictionary
-            DayAlternative();   // just wanted to try a more efficient way of doing this
+            DayAlternative();   // just wanted to try a more efficient way of doing this*/
         }
 
         public static void DayTest()
