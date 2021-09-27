@@ -29,6 +29,8 @@ namespace FileCountCheckSheetProjectPlayground
             int jobNumber = Int32.Parse(Console.ReadLine());
             // we have to make sure this is an int otherwise the code will throw an exception
             // Steve uses the code alReports[1].ToString().Substring(2) to append the job number onto the 'J' (line 1864) , if we call this and dont call to substring what do we get? it is marked as "Job Number" in the structure (line 1765)
+            
+            
             var sla = GetJobSLANumber(jobNumber);
             var day = GetDay(sla);
             var color = GetColor(day);
@@ -56,11 +58,23 @@ namespace FileCountCheckSheetProjectPlayground
         public static string GetDay(int offset)
         {
             if (offset < 0) return "Default";
-            var today = DateTime.Now;
-            today = today.AddDays(offset);
-            var result = today.DayOfWeek.ToString();
-            if (result.ToString() == "Saturday" || result.ToString() == "Sunday")
-                result = "Monday";
+            var day = DateTime.Now;
+            // today = today.AddDays(offset); //add one to offset?
+            // this is also where we should remove any weekend days if need be
+            // while loop
+            int businessDays = 0;
+            while (businessDays < offset)
+            {
+                day = day.AddDays(1);
+                if (!(day.DayOfWeek.ToString() == "Saturday" || day.DayOfWeek.ToString() == "Sunday"))
+                    businessDays++;
+
+            }
+
+
+            var result = day.DayOfWeek.ToString();
+           // if (result.ToString() == "Saturday" || result.ToString() == "Sunday")
+             //   result = "Monday";
             return result;
         }
 
